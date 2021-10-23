@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Header } from '../src/components/Header';
 import { AdvancedSearch } from '../src/components/AdvancedSearch';
@@ -7,8 +7,9 @@ import { Paginator } from '../src/components/Paginator';
 
 import styles from '../styles/Home.module.scss';
 import { List } from '../src/components/List';
-import { ApiResponseI, ListI } from '../src/interfaces/PokemonI';
+import { ListI } from '../src/interfaces/PokemonI';
 import { PokemonRepository } from '../src/repository/PokemonRepository';
+import { SearchBar } from '../src/components/SearchBar';
 
 const Home: NextPage = () => {
   const [pokeList, setPokeList] = useState<ListI[]>([]);
@@ -20,6 +21,15 @@ const Home: NextPage = () => {
     if (data?.results) {
       setPokeList(data.results);
       setCount(data.count);
+    }
+  };
+
+  const searchByName = async (name: string) => {
+    if (!name) setListOfPokemons();
+    const data = await PokemonRepository.findPokemonByName(name);
+    if (data?.species) {
+      setPokeList([data.species]);
+      setCount(1);
     }
   };
 
@@ -68,12 +78,12 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <Header />
+    <div className={styles.home}>
       <AdvancedSearch
         sendAbilityToParent={(ability) => searchByAbility(ability)}
         sendTypeToParent={(type) => searchByType(type)}
       />
+      <SearchBar sendNameToParent={(name) => searchByName(name)} />
       <Paginator
         sendOffsetToParent={(direction) => {
           setPaginator(direction);

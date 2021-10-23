@@ -3,6 +3,10 @@ export interface ListI {
   url: string;
 }
 
+export interface MyPokeList extends ListI {
+  imageUrl: string;
+}
+
 export interface ApiResponseI {
   count: number;
   next: string | null;
@@ -11,7 +15,7 @@ export interface ApiResponseI {
 }
 
 export interface ContextI {
-  myPokeList: any[];
+  myPokeList: MyPokeList[];
 }
 
 export interface PokemonDetailI {

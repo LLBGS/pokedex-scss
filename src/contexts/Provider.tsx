@@ -1,15 +1,29 @@
 import { useState } from 'react';
-import { ContextI } from '../interfaces/PokemonI';
+
+import { ContextI, ListI } from '../interfaces/PokemonI';
 import Context from './Context';
+import { MyPokeList } from '../interfaces/PokemonI';
 
 const AppProvider = ({ children }) => {
-  const defaultData: ContextI = {
-    myPokeList: [],
-  };
-  const [contextData, setContextData] = useState<ContextI>(defaultData);
+  const defaultData: MyPokeList[] = [];
+  const [myPokeList, setMyPokelist] = useState<MyPokeList[]>(defaultData);
 
+  const setFromMyPokeList = (pokemon: MyPokeList): void => {
+    setMyPokelist([...myPokeList, pokemon]);
+  };
+
+  const removeFromMyPokeList = (pokemon: ListI): void => {
+    const newList = myPokeList.filter(
+      (tmpPokemon) => tmpPokemon.name !== pokemon.name
+    );
+    setMyPokelist(newList);
+  };
   return (
-    <Context.Provider value={{ test: 'test' }}>{children}</Context.Provider>
+    <Context.Provider
+      value={{ myPokeList, setFromMyPokeList, removeFromMyPokeList }}
+    >
+      {children}
+    </Context.Provider>
   );
 };
 

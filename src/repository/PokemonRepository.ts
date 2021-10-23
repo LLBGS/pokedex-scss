@@ -6,7 +6,7 @@ import {
 } from '../types/PokemonT';
 
 export const PokemonRepository = {
-  findAllPokemons: async (offset: number, limit = 10) => {
+  findAllPokemons: async (offset: number, limit = 12) => {
     try {
       const { data } = await Api.get<ApiResponseI>('/pokemon', {
         params: {

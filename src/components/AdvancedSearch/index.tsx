@@ -1,4 +1,5 @@
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useContext, useEffect, useState } from 'react';
+import Context from '../../contexts/Context';
 import { ListI } from '../../interfaces/PokemonI';
 import { PokemonRepository } from '../../repository/PokemonRepository';
 
@@ -74,7 +75,7 @@ export function AdvancedSearch({
           })}
         </div>
       </div>
-      <div>Pesquisa Avançada</div>
+      <h2>Pesquisa Avançada</h2>
     </div>
   );
 }
