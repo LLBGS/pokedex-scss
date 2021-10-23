@@ -44,10 +44,6 @@ export function List({ pokeList }: ListProp) {
       });
   };
 
-  useEffect(() => {
-    console.log(myPokeList);
-  }, [myPokeList]);
-
   return (
     <ul className={styles.list}>
       {pokeList &&

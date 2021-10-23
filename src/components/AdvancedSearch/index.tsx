@@ -1,7 +1,9 @@
 import { createRef, useContext, useEffect, useState } from 'react';
-import Context from '../../contexts/Context';
+
 import { ListI } from '../../interfaces/PokemonI';
 import { PokemonRepository } from '../../repository/PokemonRepository';
+
+import styles from './styles.module.scss';
 
 type AdvancedSearchProps = {
   sendTypeToParent: (type: string) => void;
@@ -41,9 +43,9 @@ export function AdvancedSearch({
   };
 
   return (
-    <div>
-      <div>
-        <div className='abilityContainer'>
+    <div className={styles.advanced_search}>
+      <div className={styles.advanced_search__filters}>
+        <div className={styles.advanced_search__ability}>
           <h2>Habilidades</h2>
           <select
             ref={selectInput}
@@ -59,7 +61,7 @@ export function AdvancedSearch({
           </select>
         </div>
 
-        <div className='typeContainer'>
+        <div className={styles.advanced_search__type}>
           <h2>Tipos</h2>
           {types?.map((type) => {
             return (
@@ -75,7 +77,7 @@ export function AdvancedSearch({
           })}
         </div>
       </div>
-      <h2>Pesquisa Avançada</h2>
+      <h2 className={styles.advanced_search__title}>Pesquisa Avançada</h2>
     </div>
   );
 }

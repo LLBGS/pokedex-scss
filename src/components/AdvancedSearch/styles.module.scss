@@ -1,0 +1,18 @@
+.advanced_search {
+  &__filters {
+  }
+
+  &__ability {
+  }
+
+  &__type {
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    margin: 0 auto;
+  }
+}

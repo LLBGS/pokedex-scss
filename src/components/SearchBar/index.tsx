@@ -9,13 +9,18 @@ type SearchBarProps = {
 export function SearchBar({ sendNameToParent }: SearchBarProps) {
   const searchInput = createRef<HTMLInputElement>();
   const handleClick = () => {
-    sendNameToParent(searchInput.current?.value || '');
+    sendNameToParent(searchInput.current?.value.toLowerCase() || '');
   };
   return (
     <div className={styles.search_bar}>
-      <input type='text' ref={searchInput} />
+      <input
+        type='text'
+        ref={searchInput}
+        className={styles.search_bar__input}
+        placeholder='Bulbasaur...'
+      />
       <button onClick={handleClick} className={styles.search_bar__button}>
-        <BiSearchAlt />
+        <BiSearchAlt size={24} color={'#fff'} />
       </button>
     </div>
   );

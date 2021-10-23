@@ -16,7 +16,7 @@ export function Header() {
             pathname: `/MyPokeList`,
           }}
         >
-          <a>Minha PokeList</a>
+          <a>PokeList</a>
         </Link>
       </nav>
     </header>

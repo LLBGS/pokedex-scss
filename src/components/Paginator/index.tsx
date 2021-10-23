@@ -16,14 +16,15 @@ export function Paginator({ sendOffsetToParent }: PaginatorProps) {
         type='button'
         onClick={() => sendOffset('previous')}
       >
-        <BsArrowLeftCircleFill color={'red'} widths={50} width={50} />
+        <BsArrowLeftCircleFill color={'#e3350d'} size={48} />
       </button>
+      <h2>Pegue Todos !!!</h2>
       <button
         className={styles.paginator__next}
         type='button'
         onClick={() => sendOffset('next')}
       >
-        <BsArrowRightCircleFill width={50} height={50} />
+        <BsArrowRightCircleFill color={'#30a7d7'} size={48} />
       </button>
     </div>
   );

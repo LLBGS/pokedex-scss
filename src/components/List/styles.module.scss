@@ -33,6 +33,7 @@
     height: 36px;
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 4px;
+    cursor: pointer;
   }
 
   &__remove {
@@ -44,5 +45,6 @@
     height: 36px;
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 0.2rem;
+    cursor: pointer;
   }
 }
