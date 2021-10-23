@@ -11,6 +11,10 @@ export function SearchBar({ sendNameToParent }: SearchBarProps) {
   const handleClick = () => {
     sendNameToParent(searchInput.current?.value.toLowerCase() || '');
   };
+  const handleKeyDown = (e: any) => {
+    if (e.code === 'Enter')
+      sendNameToParent(searchInput.current?.value.toLowerCase() || '');
+  };
   return (
     <div className={styles.search_bar}>
       <input
@@ -18,6 +22,7 @@ export function SearchBar({ sendNameToParent }: SearchBarProps) {
         ref={searchInput}
         className={styles.search_bar__input}
         placeholder='Bulbasaur...'
+        onKeyDown={handleKeyDown}
       />
       <button onClick={handleClick} className={styles.search_bar__button}>
         <BiSearchAlt size={24} color={'#fff'} />

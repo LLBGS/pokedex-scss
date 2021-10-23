@@ -47,34 +47,38 @@ export function AdvancedSearch({
       <div className={styles.advanced_search__filters}>
         <div className={styles.advanced_search__ability}>
           <h2>Habilidades</h2>
-          <select
-            ref={selectInput}
-            name='ability'
-            id='ability'
-            onChange={handleSelect}
-          >
-            {abilities?.map((abilitie) => (
-              <option key={abilitie.name} value={abilitie.name}>
-                {abilitie.name}
-              </option>
-            ))}
-          </select>
+          <div className={styles.advanced_search__select}>
+            <select
+              ref={selectInput}
+              name='ability'
+              id='ability'
+              onChange={handleSelect}
+            >
+              {abilities?.map((abilitie) => (
+                <option key={abilitie.name} value={abilitie.name}>
+                  {abilitie.name.toUpperCase()}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className={styles.advanced_search__type}>
           <h2>Tipos</h2>
-          {types?.map((type) => {
-            return (
-              <button
-                key={type.name}
-                onClick={() =>
-                  handleClickType({ name: type.name, url: type.url })
-                }
-              >
-                {type.name}
-              </button>
-            );
-          })}
+          <div className={styles.advanced_search__type_container}>
+            {types?.map((type) => {
+              return (
+                <button
+                  key={type.name}
+                  onClick={() =>
+                    handleClickType({ name: type.name, url: type.url })
+                  }
+                >
+                  {type.name.toUpperCase()}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
       <h2 className={styles.advanced_search__title}>Pesquisa Avançada</h2>
