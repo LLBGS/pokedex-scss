@@ -3,9 +3,10 @@ import styles from './styles.module.scss';
 
 type PaginatorProps = {
   sendOffsetToParent: (data: 'next' | 'previous') => void;
+  offset: number;
 };
 
-export function Paginator({ sendOffsetToParent }: PaginatorProps) {
+export function Paginator({ sendOffsetToParent, offset }: PaginatorProps) {
   const sendOffset = (data: 'next' | 'previous') => {
     sendOffsetToParent(data);
   };
@@ -16,7 +17,7 @@ export function Paginator({ sendOffsetToParent }: PaginatorProps) {
         type='button'
         onClick={() => sendOffset('previous')}
       >
-        <BsArrowLeftCircleFill color={'#e3350d'} size={48} />
+        {offset > 0 && <BsArrowLeftCircleFill color={'#e3350d'} size={48} />}
       </button>
       <h2>Pegue Todos !!!</h2>
       <button

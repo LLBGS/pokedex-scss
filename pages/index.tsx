@@ -85,6 +85,7 @@ const Home: NextPage = () => {
       />
       <SearchBar sendNameToParent={(name) => searchByName(name)} />
       <Paginator
+        offset={offset}
         sendOffsetToParent={(direction) => {
           setPaginator(direction);
         }}
