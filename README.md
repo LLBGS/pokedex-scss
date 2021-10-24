@@ -16,7 +16,7 @@ yarn
 
 - Run in Dev mode 
 
-```
+```bash
 npm run dev
 # or
 yarn dev
