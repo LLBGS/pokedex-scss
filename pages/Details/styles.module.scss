@@ -1,0 +1,89 @@
+.details {
+  width: 80%;
+  background: #fff;
+  margin: 24px auto;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+
+  &__subtitle {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+
+  &__profile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    gap: 24px;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    border-radius: 8px;
+    width: 36%;
+    min-width: 300px;
+    margin: 24px 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0 auto;
+    margin: 24px 0;
+    min-width: 300px;
+    width: 50%;
+  }
+
+  &__type {
+    padding-bottom: 24px;
+  }
+
+  &__ability {
+    padding-bottom: 24px;
+  }
+
+  &__yellow {
+    background: #e6bc2f;
+  }
+
+  &__green {
+    background: #4dad5b;
+  }
+  &__red {
+    background: #e3350d;
+  }
+
+  &__types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 12px;
+  }
+
+  &__physiognomy {
+    margin-bottom: 8px;
+  }
+
+  &__item {
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    background: #424242
+      url('https://assets.pokemon.com/static2/_ui/img/chrome/body_gray_bg.png');
+  }
+}
