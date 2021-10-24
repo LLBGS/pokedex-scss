@@ -1,0 +1,15 @@
+.pokedex {
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0;
+  margin-top: 0;
+
+  &__title,
+  &__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+}
