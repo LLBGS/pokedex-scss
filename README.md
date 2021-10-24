@@ -18,7 +18,7 @@ yarn
 
 ```
 npm run dev
-#or
+# or
 yarn dev
 ```
 
